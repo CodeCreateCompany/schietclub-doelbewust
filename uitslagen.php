@@ -11,7 +11,7 @@
 		<!-- main container -->
 		<div id="container">
 			
-			<?php include('nav.html'); ?>
+			<?php include('include/nav.html'); ?>
 			
 			<!-- content goes here -->
 			<div id="content" >
