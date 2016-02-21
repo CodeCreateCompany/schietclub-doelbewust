@@ -1,13 +1,20 @@
 
 <?php 
 
-// Echo's 'class="active"' if the request url matches the current url.
-function echoActiveClassIfRequestMatches($requestUri)
+/// <summary>
+/// Echo's the given class if the request uri matches the current page uri.
+/// @uri:string will be checked for equality against the request url.
+/// @class:string: will be echo'd in the html code.
+/// @tag:bool: determines if the class tag will be included.
+/// </summary>
+function IncludeClassOnClick($class, $uri, $tag = true)
 {
     $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
 
-    if ($current_file_name == $requestUri)
-        echo 'class="active"';
+    if ($current_file_name == $uri)
+    {
+        echo ($tag) ? 'class="'.$class.'"' : $class;
+    }
 }
 
 ?>
@@ -26,22 +33,22 @@ function echoActiveClassIfRequestMatches($requestUri)
             </div>
             <div class="navbar-brand">
                 <img src="img/logo-klein.png">
-                <p>Doelbewust</p>
+                <p style="float: left">Doelbewust</p>
             </div>
         </div>
 
         <!-- Navbar content,  -->
         <div class="collapse navbar-collapse" id="navbar-content">
             <ul class="nav navbar-nav">
-                <li <?=echoActiveClassIfRequestMatches("info")?> ><a href="info.php">Info</a></li>
-                <li <?=echoActiveClassIfRequestMatches("contact")?> ><a href="contact.php">Contact</a></li>
-                <li <?=echoActiveClassIfRequestMatches("historie")?> ><a href="historie.php">Historie</a></li>
-                <li <?=echoActiveClassIfRequestMatches("evenementen")?> ><a href="evenementen.php">Evenementen</a></li>
+                <li <?=IncludeClassOnClick("active", "info")?> ><a href="info.php">Info</a></li>
+                <li <?=IncludeClassOnClick("active", "contact")?> ><a href="contact.php">Contact</a></li>
+                <li <?=IncludeClassOnClick("active", "historie")?> ><a href="historie.php">Historie</a></li>
+                <li <?=IncludeClassOnClick("active", "evenementen")?> ><a href="evenementen.php">Evenementen</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Wedstrijden <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="wedstrijden.php">Agenda</a></li>
-                        <li><a href="uitslagen.php">Uitslagen</a></li>
+                        <li <?=IncludeClassOnClick("active", "evenementen")?>><a href="wedstrijden.php">Agenda</a></li>
+                        <li <?=IncludeClassOnClick("active", "uitslagen")?>><a href="uitslagen.php">Uitslagen</a></li>
                     </ul>
                 </li>
             </ul>
