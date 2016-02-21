@@ -1,4 +1,12 @@
 
+
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+
 /* NAVBAR */
 .navbar { 
 	height: 94px; 

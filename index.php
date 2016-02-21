@@ -7,9 +7,9 @@
 		include('include/head.php'); 
 	?>
 	
-	<body>
+	<body id="page-index">
 		<!-- main container -->
-		<div class="container-fluid" id="page-index">
+		<div class="container-fluid">
 			
 			<?php include('include/nav.html'); ?>
 			
