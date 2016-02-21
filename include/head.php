@@ -1,7 +1,7 @@
-/*
+<!--
 head.php
 Should be included on every page.
-*/
+-->
 
 
 <head>
