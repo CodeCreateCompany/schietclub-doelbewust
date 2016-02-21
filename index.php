@@ -28,7 +28,7 @@
 	
 	<body>
 		<!-- main container -->
-		<div id="container-fluid">
+		<div class="container-fluid" id="page-index">
 			
 			<?php include('nav.html'); ?>
 			
