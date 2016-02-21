@@ -26,6 +26,7 @@
 	margin-top: 30px;
 }
 
+
 .navbar-collapse li a {
 	font-size: 14px;
     line-height: 94px;
@@ -55,5 +56,14 @@
 		left: 50%;
 		margin-left: -47px !important;
 		display: block;
+	}
+	.navbar-collapse {
+		text-align: right;
+		margin-top: 21px;
+	}
+
+	.navbar-collapse li a {
+	    line-height: 30px;
+	    height: 30px;
 	}
 }
