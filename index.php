@@ -11,7 +11,7 @@
 		<!-- main container -->
 		<div class="container-fluid">
 			
-			<?php include('include/nav.html'); ?>
+			<?php include('include/nav.php'); ?>
 			
 		</div>
 	</body>
