@@ -1,6 +1,4 @@
 
-
-
 /* NAVBAR */
 .navbar { 
 	height: 94px; 
@@ -17,10 +15,6 @@
     height: 94px;
 }
 
-.navbar-brand img {
-	width: auto;
-}
-
 
 .navbar-toggle {
 	margin-top: 30px;
@@ -28,7 +22,7 @@
 
 
 .navbar-collapse li a {
-	font-size: 14px;
+	font-size: 18px;
     line-height: 94px;
     height: 94px;
     padding-top: 0px;
