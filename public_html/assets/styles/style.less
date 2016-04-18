@@ -30,6 +30,10 @@
 	src: url('@{fonts}/ERASMD.TTF');
 }
 
+#bg-index { .page_background(1); }
+#bg-contact { .page_background(2); }
+#bg-info { .page_background(3); }
+
 h1, h2, h3, h4, h5, h6 {
 	color: @text-primary;
 }
@@ -44,14 +48,6 @@ body {
 	font-size: 16px;
 	font-weight: 300;
 
-}
-
-.vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
-
-  display: flex;
-  align-items: center;
 }
 
 nav {
@@ -78,9 +74,7 @@ nav {
 	}
 }
 
-#bg-index { .page_background(1); }
-#bg-contact { .page_background(2); }
-#bg-info { .page_background(3); }
+
 
 .intro {
   display: table;
