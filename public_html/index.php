@@ -7,7 +7,7 @@
 		<title>Schietclub Doelbewust - Home</title>
 	</head>
 
-	<body>
+	<body id="page-index">
 			<?php include('include/nav.html'); ?>
 	</body>
 
