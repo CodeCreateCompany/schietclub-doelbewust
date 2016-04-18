@@ -5,6 +5,7 @@
 @fonts: "../fonts";
 @nav-height: 108px;
 @logo-height: 78px;
+@text-primary: rgba(255, 165, 0, 1);
 
 .dimensions(@x) {
 	width: @x;
@@ -29,6 +30,10 @@
 	src: url('@{fonts}/ERASMD.TTF');
 }
 
+h1, h2, h3, h4, h5, h6 {
+	color: @text-primary;
+}
+
 html {
 	.dimensions(100%);
 }
@@ -38,6 +43,15 @@ body {
 	font-family: eras;
 	font-size: 16px;
 	font-weight: 300;
+
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
 }
 
 nav {
@@ -64,163 +78,19 @@ nav {
 	}
 }
 
-#page-index { .page_background(1);}
+#bg-index { .page_background(1); }
+#bg-contact { .page_background(2); }
+#bg-info { .page_background(3); }
 
+.intro {
+  display: table;
+  width: 100%;
+  height: 800px;
+  padding: 100px 0;
+  text-align: center;
 
-#container
-{
-	width:100%;
-	min-width:1024px;
-	height:100%;
-	margin:0 auto;
-	position:absolute;
-	padding:0;
-}
-
-#content
-{
-	margin: 0 auto;
-	width: 100%;
-	height: calc(100% - 94px);
-	min-width: 1024px;
-	min-height: 768px;
-}
-
-.ContentContainer
-{
-	width: 100%;
-	min-width: 1024px;
-	height: 100%;
-	min-height: 768px;
-	clear:both;
-}
-
-#page1
-{
-	background: url('../images/foto1.jpg');
-	background-size: cover;
-}
-
-#page2
-{
-	background: url(../images/foto4.jpg);
-	background-size: cover;
-}
-
-#page3
-{
-	background: url(../images/foto3.jpg);
-	background-size: cover;
-}
-
-#page4
-{
-	background: url(../images/foto6.jpg);
-	background-size: cover;
-}
-
-#page5
-{
-	background: url(../images/foto5.jpg);
-	background-size: cover;
-}
-
-#page6
-{
-	background: url(../images/foto2.jpg);
-	background-size: cover;
-}
-
-.p1top
-{
-	position:relative;
-	width: 100%;
-	height: 65%;
-}
-
-.p1top img
-{
-	width: 500px;
-	height: 500px;
-	position:absolute;
-	top:50%;
-	left:50%;
-	margin: -250px 0 0 -250px;
-}
-
-.p1bot {
-	padding-top: 60px;
-	position:relative;
-	width: 100%;
-	height: 35%;
-}
-
-.p1bot p
-{
-	margin: auto;
-	padding: 10px 25px;
-	height: 150;
-	width: 394px;
-
-	top: 8%;
-
-
-	background-color: white;
-	font-family: eras;
-	font-size: 19px;
-	color: rgba(109, 109, 109, 1);
-}
-
-.p4text
-{
-	top: 8%;
-	position:relative;
-	width: 100%;
-	height: 35%;
-}
-
-.p4text p
-{
-	margin: auto;
-	padding: 10px 25px;
-	height: 150;
-	width: 1024px;
-
-
-	background-color: white;
-	font-family: eras;
-	font-size: 19px;
-	color: rgba(109, 109, 109, 1);
-}
-
-.info-block {
-
-	margin: 0 auto;
-	padding-bottom: 80px;
-	top: 8%;
-	width: 500px;
-}
-
-.info-block div {
-	position: relative;
-	margin: auto;
-	margin-top: 25px;
-	padding: 10px 25px;
-	background-color: white;
-	font-family: eras;
-	font-size: 19px;
-	color: rgba(109, 109, 109, 1);
-}
-
-.info-block div h2 {
-}
-
-.infolink {
-	color: rgba(109, 109, 109, 1);
-	text-decoration: none;
-	cursor: pointer;
-}
-.infolink:hover {
-	color: #000;
-	text-decoration: underline;
+  .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
