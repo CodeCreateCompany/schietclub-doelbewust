@@ -11,3 +11,4 @@ Should be included on every page.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <link rel="stylesheet/less" type="text/css" href="assets/styles/style.less" />
 <script src="assets/javascripts/less.min.js" type="text/javascript"></script>
+<script src="assets/javascripts/set_nav_active.js" type="text/javascript"></script>
