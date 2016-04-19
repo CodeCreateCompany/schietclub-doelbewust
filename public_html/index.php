@@ -15,14 +15,11 @@
 		    	<div class="intro-body">
 		        	<div class="container">
 		            	<div class="row">
-		                	<div class="col-md-8 col-md-offset-2">
-		                    	<img src="assets/images/logo-home.png">
-		                	</div>
+                    	<img src="assets/images/logo-home.png" class="img-responsive">
 		            	</div>
 		        	</div>
 		    	</div>
 			</header>
-
 
 	</body>
 

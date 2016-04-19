@@ -1,0 +1,17 @@
+.dimensions(@x) {
+	width: @x;
+	height: @x;
+}
+
+.dimensions(@x, @y) {
+	width: @x;
+	height: @y;
+}
+
+.page_background(@n) {
+	background: url('@{image_path}/foto@{n}.jpg');
+	-webkit-background-size:  cover;
+  -moz-background-size:     cover;
+  background-size:          cover;
+  -o-background-size:       cover;
+}
