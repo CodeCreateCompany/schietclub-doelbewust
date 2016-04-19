@@ -46,7 +46,7 @@ nav.navbar.navbar-default {
             text-align: center;
             height: auto;
             margin: 0 auto;
-            line-height: 77px;
+            line-height: @logo-height;
             font-size: 18px;
         }
     }
@@ -55,6 +55,7 @@ nav.navbar.navbar-default {
             > a {
                 &:hover, &:focus {
                     color: @palette_a;
+                    .transition(color 0.2s ease-in-out);
                 }
             }
         }
@@ -71,11 +72,13 @@ nav.navbar.navbar-default {
         table-layout: fixed;
     }
 
+    // Brand logo
     .navbar-brand {
         img {
-            height: 78px;
+            height: @logo-height;
         }
     }
+    // Navigation toggle expand.
     .navbar-toggle {
         margin-top: (@nav-height / 2 - 33px);
     }
@@ -88,7 +91,7 @@ nav.navbar.navbar-default {
             width: 100%;
             li a {
                 height: @nav-height / 2;
-                line-height: 78px / 2;
+                line-height: @logo-height / 2;
             }
         }
     }
@@ -97,7 +100,7 @@ nav.navbar.navbar-default {
     .navbar-collapse {
         ul li a {
             height: @nav-height;
-            line-height: 78px;
+            line-height: @logo-height;
         }
     }
 }
@@ -107,7 +110,7 @@ nav.navbar.navbar-default {
         height: 100%;
         img {
             height: auto;
-            max-height: 39px;
+            max-height: @logo-height / 2px;
         }
     }
 }
@@ -118,7 +121,8 @@ nav.navbar.navbar-default {
     width: 100%;
     height: 100% - @nav-height;
     padding: 100px 0;
-    img {
+
+    img.img-responsive {
         margin: 0 auto;
     }
 }
