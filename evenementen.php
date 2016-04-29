@@ -3,33 +3,18 @@
 <html>
 
 	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<?php include('include/headers.php'); ?>
 		<title>Schietclub Doelbewust - Evenementen</title>
 	</head>
-	
-	<body>
-		<!-- main container -->
-		<div id="container">
-			
-			<?php include('nav.html'); ?>
-			
+
+	<body id="bg-evenementen">
+		<?php include('include/nav.html'); ?>
+
 			<!-- content goes here -->
-			<div id="content" >
-			
-				<!-- each container defines a single page -->
-				<div class="ContentContainer" id="page5">
-					
-					<div class="p4text">
-						<p>
-						</p>
-					</div>
-					
-				</div>
-				
-			</div>
-			
+			<section id="evenementen" >
+
+			</section>
+
 		</div>
 	</body>
 
