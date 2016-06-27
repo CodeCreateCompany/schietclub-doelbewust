@@ -25,6 +25,11 @@ var imagemin = require('gulp-imagemin');
 
 var tsProject = typescript.createProject('tsconfig.json');
 
+gulp.task('build-fonts', function () {
+    return gulp.src(assetsDev + 'fonts/*')
+                .pipe(gulp.dest(assetsProd + 'fonts/'));
+});
+
 gulp.task('build-css', function () {
     return gulp.src(assetsDev + 'scss/*.scss')
         .pipe(sourcemaps.init())
@@ -43,12 +48,17 @@ gulp.task('build-ts', function () {
         .pipe(gulp.dest(appProd));
 });
 
-gulp.task('build-img', function () {
-    return gulp.src(assetsDev + 'img/**/*')
+gulp.task('build-js', function () {
+    return gulp.src(assetsDev + 'javascripts/*.js')
+        .pipe(gulp.dest(assetsProd + 'javascripts'));
+});
+
+gulp.task('build-images', function () {
+    return gulp.src(assetsDev + 'images/**/*')
         .pipe(imagemin({
             progressive: true
         }))
-        .pipe(gulp.dest(assetsProd + 'img/'));
+        .pipe(gulp.dest(assetsProd + 'images/'));
 });
 
 gulp.task('build-html', function () {
@@ -58,8 +68,10 @@ gulp.task('build-html', function () {
 
 gulp.task('watch', function () {
     gulp.watch(appDev + '**/*.ts', ['build-ts']);
+    gulp.watch(assetsDev + 'javascripts/*.js', ['build-js']);
+    gulp.watch(assetsDev + 'fonts/*.ttf', ['build-fonts']);
     gulp.watch(assetsDev + 'scss/**/*.scss', ['build-css']);
-    gulp.watch(assetsDev + 'img/*', ['build-img']);
+    gulp.watch(assetsDev + 'images/*', ['build-images']);
 });
 
-gulp.task('default', ['watch', 'build-ts', 'build-css']);
+gulp.task('default', ['watch', 'build-ts', 'build-js', 'build-fonts', 'build-css', 'build-images']);

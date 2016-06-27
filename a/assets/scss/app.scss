@@ -1,17 +1,19 @@
 
 
+$image_path: "../images";
+$font_path: "../fonts";
+$nav-height: 108px;
+$logo-height: 78px;
 
+$palette_a: rgba(255, 165, 0, 1);
+$palette_b: #191919;
+$palette_c: #0072FF;
+$palette_d: #FFFFFF;
 
-body {
-  padding: 32px;
-  margin: 32px;
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 16px;
-}
 
 @font-face {
   font-family: eras;
-  src: url('#{$font_path}\/ERASMD.TTF');
+  src: url("#{$font_path}\/ERASMD.TTF");
 }
 
 #bg-index {
@@ -39,6 +41,7 @@ p {
 html {
     @include dimensions(100%);
 }
+
 body {
     @include dimensions(100%);
     font-family: eras;
