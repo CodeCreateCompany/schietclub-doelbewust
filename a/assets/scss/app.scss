@@ -10,6 +10,44 @@ $palette_b: #191919;
 $palette_c: #0072FF;
 $palette_d: #FFFFFF;
 
+@dimensions($x) {
+	width: $x;
+	height: $x;
+}
+
+@dimensions($x, $y) {
+	width: $x;
+	height: $y;
+}
+
+@page_background($n) {
+	background: url("#{$image_path}\/foto#{$n}.jpg");
+	-webkit-background-size:  cover;
+  -moz-background-size:     cover;
+  background-size:          cover;
+  -o-background-size:       cover;
+}
+
+@transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition:    $transition;
+	-ms-transition:     $transition;
+	-o-transition:      $transition;
+}
+
+@scale ($factor) {
+	-webkit-transform: scale($factor);
+	-moz-transform: 	 scale($factor);
+	-ms-transform: 		 scale($factor);
+	-o-transform: 		 scale($factor);
+}
+@rotate ($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: 	 rotate($deg);
+	-ms-transform: 		 rotate($deg);
+	-o-transform: 		 rotate($deg);
+}
+
 
 @font-face {
   font-family: eras;
