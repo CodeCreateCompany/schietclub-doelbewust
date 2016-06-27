@@ -25,6 +25,7 @@
   "files": [
     "./dev/app.component.ts",
     "./dev/boot.ts",
-    "./dev/my-component.component.ts"
+    "./dev/my-component.component.ts",
+    "./dev/test.component.ts"
   ]
 }

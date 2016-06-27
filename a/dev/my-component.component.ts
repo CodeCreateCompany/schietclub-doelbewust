@@ -10,7 +10,7 @@ import {OnInit} from 'angular2/core';
 		Is it awesome?
 		<input type="text" #inputElement (keyup)="0">
 		<br/><br/>
-		<button [disabled]="inputElement.value !== 'yes'" >only enabled if yes was entered</button>
+		<button [disabled]="inputElement.value !== 'yes'" >only j if yes was entered</button>
 	`,
 	styleUrls: ['src/css/mycomponent.css'],
 	directives: [TestComponent]
@@ -18,7 +18,7 @@ import {OnInit} from 'angular2/core';
 
 export class MyComponentComponent implements OnInit {
 	name: string;
-	
+
 	ngOnInit():any {
 		this.name = 'Niels';
 	}
