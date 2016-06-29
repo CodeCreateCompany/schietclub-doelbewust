@@ -9,21 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var navigation_bar_component_1 = require('./navigation-bar/navigation-bar.component');
-var content_component_1 = require('./content/content.component');
 var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.isTestable = true;
+var ContentComponent = (function () {
+    function ContentComponent() {
     }
-    AppComponent = __decorate([
+    ContentComponent = __decorate([
         core_1.Component({
-            selector: 'app-component',
-            template: "\n    <navigation-bar></navigation-bar>\n    <content></content>\n    ",
-            directives: [navigation_bar_component_1.NavigationBarComponent, content_component_1.ContentComponent, router_1.ROUTER_DIRECTIVES]
+            selector: 'content',
+            template: "\n    <h1> content here </h1>\n    <router-outlet></router-outlet>\n  ",
+            directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ContentComponent);
+    return ContentComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.ContentComponent = ContentComponent;

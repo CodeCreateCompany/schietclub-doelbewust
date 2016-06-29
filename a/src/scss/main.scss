@@ -52,72 +52,63 @@ body {
   margin: 0;
 }
 
-nav > .container-fluid {
-  .navbar-header {
-    p {
-      font-size: 18px;
-      height: auto;
-      line-height: $logo-height;
-      margin: 0 auto;
-      text-align: center;
-    }
-  }
-
-  .navbar-nav {
-    display: table;
-    float: none;
+.navbar-header {
+  p {
+    font-size: 18px;
+    height: $nav-height;
+    line-height: $nav-height;
     margin: 0 auto;
-    table-layout: fixed;
-
-    > li a {
-      &:hover,
-      &:focus {
-        @include transition(color .2s ease-in-out);
-        color: $palette-a;
-      }
-    }
-
-    > .active {
-      > a,
-      > a:hover,
-      > a:focus {
-        color: $palette-c;
-      }
-    }
+    text-align: center;
   }
 
-  // Brand logo
-  .navbar-brand {
-    img {
-      height: $logo-height;
-    }
+  .brand-image {
+    height: $logo-height;
   }
-  // Navigation toggle expand.
+
   .navbar-toggle {
-    margin-top: ($nav-height / 2 - 33px);
+    margin-top: ($nav-height / 2 - 17px);
   }
-  // .collapsing is added during the menu collapse animation.
-  // .in is added when the menu is expanded.
-  .navbar-collapse.collapsing,
-  .navbar-collapse.in {
-    padding: 0;
+}
 
-    ul {
-      width: 100%;
+// Navigation links.
+.navbar-collapse {
+  li a {
+    @include transition(color .2s ease-in-out);
+    height: $nav-height;
+    line-height: $logo-height;
 
-      li a {
-        height: $nav-height / 2;
-        line-height: $logo-height / 2;
-      }
+    &:hover,
+    &:focus {
+      color: $palette-a !important; //bootstrap override
     }
   }
+}
 
-  // normal-screen, nav links
-  .navbar-collapse {
-    ul li a {
-      height: $nav-height;
-      line-height: $logo-height;
-    }
+.navbar-nav {
+  display: table;
+  float: none;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+
+// Expaning navigation menu.
+.navbar-collapse.collapsing,
+.navbar-collapse.in {
+  padding: 0;
+
+  ul {
+    width: 100%;
+  }
+
+  li a {
+    height: $nav-height / 2;
+    line-height: $logo-height / 2;
+  }
+
+  li.active > a,
+  li.active > a:hover,
+  li.active > a:focus {
+    color: $palette-c;
   }
 }
 

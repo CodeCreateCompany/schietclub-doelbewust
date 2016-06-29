@@ -34,4 +34,3 @@
   System.config(config);
 
 })(this);
-
