@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
                   <span class="icon-bar"></span>
                 </button>
                 <a href="#" class="navbar-brand">
-                  <img alt="Doelbewust" src="assets/images/logo-klein.png" class="img-responsive"/>
+                  <img alt="Doelbewust" src="images/logo-klein.png" class="img-responsive"/>
                 </a>
                 <p href="#" class="hidden-sm hidden-md hidden-lg">Doelbewust</p>
 
