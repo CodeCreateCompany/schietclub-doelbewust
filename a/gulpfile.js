@@ -15,6 +15,38 @@ var gulp = require('gulp'),
     merge = require('merge-stream'),
     SystemBuilder = require('systemjs-builder');
 
+var browserSync = require('browser-sync').create();
+
+gulp.task('serve', ['html'], function() {
+
+
+    browserSync.init({
+        server: 'dist/'
+    });
+
+    gulp.watch('src/**/*.html', [ 'watch-html' ]);
+    gulp.watch('src/app/**/**.ts', [ 'watch-typescript' ]);
+    gulp.watch('src/scss/**/*.scss', [ 'watch-scss']);
+    gulp.watch('src/fonts/*.ttf', [ 'watch-fonts' ]);
+    gulp.watch('src/images/**/*.*', [ 'watch-images' ]);
+});
+
+gulp.task('watch-html', ['html'], function() {
+    browserSync.reload();
+});
+gulp.task('watch-typescript', ['system-build'], function() {
+    browserSync.reload();
+});
+gulp.task('watch-scss', ['lintScss', 'scss'], function() {
+    browserSync.reload();
+});
+gulp.task('watch-fonts', ['fonts'], function() {
+    browserSync.reload();
+});
+gulp.task('watch-images', ['images'], function() {
+    browserSync.reload();
+});
+
 gulp.task('clean', () => {
     return del('dist');
 });
@@ -51,6 +83,11 @@ gulp.task('html', () => {
         .pipe(gulp.dest('dist/'));
 });
 
+gulp.task('fonts', () => {
+    return gulp.src('src/fonts/**/*.*')
+        .pipe(gulp.dest('dist/fonts'));
+});
+
 gulp.task('images', () => {
     return gulp.src('src/images/**/*.*')
         .pipe(imagemin())
@@ -72,6 +109,11 @@ gulp.task('scss', () => {
         .pipe(cssPrefixer())
         .pipe(gulp.dest('dist/css/'));
 });
+
+gulp.task('javascripts', function() {
+    return gulp.src('src/javascripts/**/*.js')
+        .pipe(gulp.dest('dist/js/'));
+})
 
 gulp.task('test-tsc', () => {
     var tsProject = tsc.createProject('tsconfig.json');
@@ -95,6 +137,10 @@ gulp.task('minify', () => {
         .pipe(jsMinify())
         .pipe(gulp.dest('dist/js/'));
 
+    var otherjs = gulp.src('dist/js/*.js')
+        .pipe(jsMinify())
+        .pipe(gulp.dest('dist/js/'));
+
     var css = gulp.src('dist/css/styles.css')
         .pipe(cssMinify())
         .pipe(gulp.dest('dist/css/'));
@@ -102,21 +148,7 @@ gulp.task('minify', () => {
     return merge(js, css);
 });
 
-gulp.task('watch', () => {
-    var watchTs = gulp.watch('src/app/**/**.ts', [ 'system-build' ]),
-        watchScss = gulp.watch('src/scss/**/*.scss', [ 'lintScss', 'scss' ]),
-        watchHtml = gulp.watch('src/**/*.html', [ 'html' ]),
-        watchImages = gulp.watch('src/images/**/*.*', [ 'images' ]),
 
-        onChanged = function(event) {
-            console.log('File ' + event.path + ' was ' + event.type + '. Running tasks...');
-        };
-
-    watchTs.on('change', onChanged);
-    watchScss.on('change', onChanged);
-    watchHtml.on('change', onChanged);
-    watchImages.on('change', onChanged);
-});
 
 gulp.task('watchtests', () => {
     var watchTs = gulp.watch('src/app/**/**.ts', [ 'test-run' ]),
@@ -134,8 +166,9 @@ gulp.task('default', [
     'shims',
     'system-build',
     'html',
+    'fonts',
     'images',
+    'javascripts',
     'lintScss',
     'scss'
 ]);
-

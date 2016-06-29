@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import { ExampleComponent } from './example/example.component';
+import {NavigationBarComponent} from './navigation-bar/navigation-bar.component';
 
 @Component({
     selector: 'app-component',
     template: `
-    <div class="container">
-        <h1>My Angular 2 Base App</h1>
-        <example></example>
-    </div>
+    <navigation-bar></navigation-bar>
     ` ,// Using backticks allows multi-line templates
-    directives: [ ExampleComponent ]
+    directives: [ NavigationBarComponent ]
 })
 export class AppComponent {
     public isTestable: boolean = true;
@@ -17,4 +14,3 @@ export class AppComponent {
     // Angular 2 uses a tree of components to create an app.
     // This component is the root node of that tree.
 }
-
