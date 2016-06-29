@@ -1,0 +1,21 @@
+@mixin dimensions($x, $y) {
+  width: $x;
+  height: $y;
+}
+
+@mixin page-background($n) {
+  background: url('#{$image-path}\/foto#{$n}.jpg');
+  background-size: cover;
+}
+
+@mixin transition($transition) {
+  transition: $transition;
+}
+
+@mixin scale ($factor) {
+  transform: scale($factor);
+}
+
+@mixin rotate ($deg) {
+  transform: rotate($deg);
+}
