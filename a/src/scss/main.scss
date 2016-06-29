@@ -15,15 +15,15 @@
   src: url('../fonts/ERASMD.TTF');
 }
 
-#bg-index {
+.bg-home {
   @include page-background(1);
 }
 
-#bg-contact {
+.bg-contact {
   @include page-background(2);
 }
 
-#bg-info {
+.bg-info {
   @include page-background(3);
 }
 
@@ -50,6 +50,15 @@ body {
   font-size: 16px;
   font-weight: 300;
   margin: 0;
+}
+
+.content-body {
+  @include dimensions(100%, 100%);
+  margin: 0;
+}
+
+home {
+
 }
 
 .navbar-header {

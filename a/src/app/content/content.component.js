@@ -16,7 +16,7 @@ var ContentComponent = (function () {
     ContentComponent = __decorate([
         core_1.Component({
             selector: 'content',
-            template: "\n    <h1> content here </h1>\n    <router-outlet></router-outlet>\n  ",
+            template: "\n    <div class=\"content-body\">\n      <router-outlet></router-outlet>\n    </div>\n  ",
             directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])

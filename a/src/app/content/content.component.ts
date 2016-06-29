@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
 @Component({
   selector: 'content',
   template: `
-    <h1> content here </h1>
-    <router-outlet></router-outlet>
+    <div class="content-body">
+      <router-outlet></router-outlet>
+    </div>
   `,
   directives: [ROUTER_DIRECTIVES]
 })
 
-export class ContentComponent { }
+export class ContentComponent {
+}

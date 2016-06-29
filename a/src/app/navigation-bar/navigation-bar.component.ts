@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 @Component({
     selector: 'navigation-bar',
     template: `
-        <nav class="navbar navbar-default" role="navigation" (window:resize)="onResize($event)">
+        <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
@@ -26,8 +26,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="nav-collapse">
                 <ul class="nav navbar-nav">
-                  <li><a [routerLink]="['./home']">Home</a></li>
-                  <li><a [routerLink]="['./info']">Info</a></li>
+                  <li><a [routerLink]="['/home']">Home</a></li>
+                  <li><a [routerLink]="['/info']">Info</a></li>
                   <li><a href="contact.php">Contact</a></li>
                   <li><a href="historie.php">Historie</a></li>
                   <li><a href="evenementen.php">Evenementen</a></li>
