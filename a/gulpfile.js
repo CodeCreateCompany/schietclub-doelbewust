@@ -25,6 +25,7 @@ gulp.task('serve', ['html'], function() {
     });
 
     gulp.watch('src/**/*.html', [ 'watch-html' ]);
+    gulp.watch('src/app/**/*.html', [ 'watch-html' ]);
     gulp.watch('src/app/**/**.ts', [ 'watch-typescript' ]);
     gulp.watch('src/scss/**/*.scss', [ 'watch-scss']);
     gulp.watch('src/fonts/*.ttf', [ 'watch-fonts' ]);
@@ -55,18 +56,18 @@ gulp.task('shims', () => {
     return gulp.src([
             'node_modules/core-js/client/shim.js',
             'node_modules/zone.js/dist/zone.js',
-            'node_modules/reflect-metadata/Reflect.js'
+            'node_modules/reflect-metadata/Reflect.js',
+            'src/**/*.js'
         ])
         .pipe(concat('shims.js'))
-        .pipe(gulp.dest('dist/js/'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('system-build', [ 'tsc' ], () => {
     var builder = new SystemBuilder();
 
     return builder.loadConfig('system.config.js')
-        .then(() => builder.buildStatic('app', 'dist/js/bundle.js'))
-        .then(() => del('build'));
+        .then(() => builder.buildStatic('app', 'dist/bundle.js'));
 });
 
 gulp.task('tsc', () => {
@@ -75,12 +76,17 @@ gulp.task('tsc', () => {
             .pipe(tsc(tsProject));
 
     return tsResult.js
-        .pipe(gulp.dest('build/'));
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('html', () => {
-    return gulp.src('src/**/**.html')
-        .pipe(gulp.dest('dist/'));
+    return gulp.src(['src/**/*.html'])
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('css', () => {
+    return gulp.src('src/**/*.css')
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('fonts', () => {
@@ -98,6 +104,8 @@ gulp.task('lintScss', function() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(scssLint({ config: 'lint.yml' }));
 });
+
+
 
 gulp.task('scss', () => {
     return gulp.src('src/scss/main.scss')

@@ -1,7 +1,7 @@
 "use strict";
 var router_1 = require('@angular/router');
-var content_routes_1 = require('./content/content.routes');
-exports.routes = content_routes_1.ContentRoutes.slice();
+var index_1 = require('./+home/index');
+var routes = index_1.HomeRoutes.slice();
 exports.APP_ROUTER_PROVIDERS = [
-    router_1.provideRouter(exports.routes)
+    router_1.provideRouter(routes)
 ];

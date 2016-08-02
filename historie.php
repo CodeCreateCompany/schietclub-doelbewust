@@ -12,11 +12,10 @@
 
 			<!-- content goes here -->
 			<section id="historie" >
-
-				<!-- each container defines a single page -->
-				<div class="ContentContainer" id="page4">
-
-					<div class="p4text">
+				<div class="row">
+					<div class="col-sm-3">
+					</div>
+					<div class="col-sm-6 history-body">
 						<p>
 							Schietsportvereniging Doelbewust is opgericht op 1 december 1975 en is gevestigd te Uden. <br />
 							Direct na de oprichting is de vereniging Koninklijk erkend en Ministerieel goedgekeurd zodat gebruik kan worden gemaakt van militaire schietbanen. <br />
@@ -43,6 +42,8 @@
 							beoefenen, voor iedereen, binnen de wettelijke bepalingen, en geheel overeenkomstig de statutaire doelstelling van Schietsportvereniging Doelbewust. <br />
 							<br />
 						</p>
+					</div>
+					<div class="col-sm-3">
 					</div>
 				</div>
 

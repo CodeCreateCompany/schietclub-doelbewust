@@ -39,7 +39,7 @@
 								</div>
 								<div class="col-md-6">
 									<h2>Wilt u zich aanmelden?</h2>
-									<a href="">Klik dan hier voor het aanmeldformulier</a>
+									<a href="assets/files/aanmeld.pdf">Klik dan hier voor het aanmeldformulier</a>
 								</div>
 							</div>
 						</div>

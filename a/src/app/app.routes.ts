@@ -1,9 +1,10 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
-import { ContentRoutes } from './content/content.routes';
+
+import { HomeRoutes } from './+home/index';
 import {LocationStrategy, PathLocationStrategy} from '@angular/common'
 
-export const routes: RouterConfig = [
-    ...ContentRoutes
+const routes: RouterConfig = [
+    ...HomeRoutes
 ];
 
 export const APP_ROUTER_PROVIDERS = [

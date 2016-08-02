@@ -54,11 +54,8 @@ body {
 
 .content-body {
   @include dimensions(100%, 100%);
-  margin: 0;
-}
-
-home {
-
+  @include page-background(1);
+  margin-top: 0;
 }
 
 .navbar-header {
@@ -91,6 +88,10 @@ home {
       color: $palette-a !important; //bootstrap override
     }
   }
+}
+
+.navbar {
+  margin-bottom: 0 !important;
 }
 
 .navbar-nav {
@@ -136,8 +137,7 @@ home {
 
 .intro {
   display: table;
-  height: unquote("100% - #{$nav-height}");
-  margin-top: $nav-height;
+  height: 100%;
   padding: 100px 0;
   width: 100%;
   img.img-responsive {

@@ -7,7 +7,7 @@
 		<title>Schietclub Doelbewust - Info</title>
 	</head>
 
-	<body>
+	<body id="bg-info">
 			<?php include('include/nav.html'); ?>
 			<section id="info">
 				<div class="container">
@@ -31,12 +31,18 @@
 							</div>
 							<div class="row">
 								<div class="col-md-6">
-									<h3>Trainingen voor de Jeugd:</h3>
-									<p>Maandag 19:00 tot 20:00 en van 20:00 tot 21:00 uur</p>
+									<h3>Disciplines</h3>
+									<p>LP LG GKG GKP KKG KKP HWG HWP</p>
 								</div>
 								<div class="col-md-6">
-									<h3>Wilt u zich aanmelden?</h3>
-									<a href="">Klik dan hier voor het aanmeldformulier</a>
+									<h3>Belangrijke Links</h3>
+									<a class="infolink" href="assets/images/prijzen.png">Kosten Lidmaatschap</a> <br>
+									<a class="infolink" href="assets/files/regelement.pdf">Regelement</a> <br>
+									<a class="infolink" href="https://www.knsa.nl/">KNSA</a> <br>
+									<a class="infolink" href="http://knsa-d4.nl/">KNSA district 4</a> <br>
+									<a class="infolink" href="https://www.baanplanner.eu/index.php?pagina=">BaanPlanner</a> <br>
+									<a class="infolink" href="http://schietsport.startpagina.nl/">Startpagina Schietsport</a> <br>
+									<a class="infolink" href="http://wetten.overheid.nl/zoeken/">Wet- en regelgeving</a> <br>
 								</div>
 							</div>
 						</div>

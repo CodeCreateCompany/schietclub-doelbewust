@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var navigation_bar_component_1 = require('./navigation-bar/navigation-bar.component');
-var content_component_1 = require('./content/content.component');
 var router_1 = require('@angular/router');
+var index_1 = require('./shared/index');
 var AppComponent = (function () {
     function AppComponent() {
-        this.isTestable = true;
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'app-component',
-            template: "\n    <navigation-bar></navigation-bar>\n    <content></content>\n    ",
-            directives: [navigation_bar_component_1.NavigationBarComponent, content_component_1.ContentComponent, router_1.ROUTER_DIRECTIVES]
+            moduleId: module.id,
+            selector: 'sd-app',
+            templateUrl: 'app.component.html',
+            directives: [router_1.ROUTER_DIRECTIVES, index_1.NavbarComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map

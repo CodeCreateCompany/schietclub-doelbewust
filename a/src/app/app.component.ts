@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
-import {NavigationBarComponent} from './navigation-bar/navigation-bar.component';
-import {ContentComponent} from './content/content.component';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { NavbarComponent } from './shared/index';
 
 @Component({
-    selector: 'app-component',
-    template: `
-    <navigation-bar></navigation-bar>
-    <content></content>
-    ` ,// Using backticks allows multi-line templates
-    directives: [ NavigationBarComponent, ContentComponent, ROUTER_DIRECTIVES ]
+    moduleId: module.id,
+    selector: 'sd-app',
+    templateUrl: 'app.component.html',
+    directives: [ ROUTER_DIRECTIVES, NavbarComponent ]
 })
 export class AppComponent {
-    public isTestable: boolean = true;
 
-    // Angular 2 uses a tree of components to create an app.
-    // This component is the root node of that tree.
+
+
 }

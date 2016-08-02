@@ -12,7 +12,8 @@ import { Component } from '@angular/core';
                 </div>
             </div>
         </header>
-    `
+    `,
+    host: {'class' : 'content-body'},
 })
 
 export class HomeComponent {

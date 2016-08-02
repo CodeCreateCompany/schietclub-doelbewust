@@ -15,7 +15,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home',
-            template: "\n        <header class=\"intro\">\n            <div class=\"intro-body\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <img src=\"images/logo-home.png\" class=\"img-responsive\">\n                    </div>\n                </div>\n            </div>\n        </header>\n    "
+            template: "\n        <header class=\"intro\">\n            <div class=\"intro-body\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <img src=\"images/logo-home.png\" class=\"img-responsive\">\n                    </div>\n                </div>\n            </div>\n        </header>\n    ",
+            host: { 'class': 'content-body' },
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComponent);
